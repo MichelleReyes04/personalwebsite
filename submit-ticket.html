@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Ticket</title>
+    <link rel="stylesheet" href="/submit-ticket-style.css?v=7">
+</head>
+<body>
+    <div class="body-container">
+        <nav class="navbar">
+            <div class="Title">Michellecodes.dev</div>
+            <div class="nav-wrapper">
+                <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="myNav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="ticket-page">
+            <section class="ticket-intro">
+                <p class="eyebrow">Service desk terminal</p>
+                <h1>Submit a Ticket</h1>
+                <p>
+                    Spotted a bug, awkward layout, slow page, or idea that could level up the site?
+                    Drop the details here and I will treat it like a real product issue.
+                </p>
+            </section>
+
+            <section class="ticket-shell">
+                <form class="ticket-form" action="/submit-ticket" method="post">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+
+                    <h2>Ticket Details</h2>
+
+                    <div class="field">
+                        <label for="issue">Issue Title</label>
+                        <input type="text" id="issue" name="issue" placeholder="Short, clear summary" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="category">Category</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="website-issues">Website Issue</option>
+                                <option value="bug-reports">Bug Report</option>
+                                <option value="perf-problems">Performance Problem</option>
+                                <option value="access-concerns">Accessibility Concern</option>
+                                <option value="feature-requests">Feature Request</option>
+                                <option value="general-feedback">General Feedback</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="priority">Priority</label>
+                            <select id="priority" name="priority" required>
+                                <option value="">Select a priority</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="description">Description</label>
+                        <p class="field-help">Tell me what happened, what you expected, and where you saw it.</p>
+                        <textarea id="description" name="description" rows="6" placeholder="Example: On mobile, the project cards overlap after I open the menu..." required></textarea>
+                    </div>
+
+                    <button type="submit">Launch Ticket</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function toggleMenu(){
+            const nav = document.getElementById("myNav");
+            const btn = document.getElementById("hamburgerBtn");
+            const isOpen = nav.classList.toggle("open");
+            btn.classList.toggle("active", isOpen);
+            btn.setAttribute("aria-expanded", isOpen);
+        }
+    </script>
+</body>
+</html>

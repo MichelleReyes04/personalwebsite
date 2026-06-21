@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home-style.css?v=7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="body-container">
+        <nav class="navbar">
+            <div class="Title">Michellecodes.dev</div>
+            <div class="nav-wrapper">
+                <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="myNav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main-intro">
+            <p class="eyebrow">Portfolio boot sequence</p>
+            <h1>&gt; Hi, I am Michelle Reyes_</h1>
+            <p class="typing-text">AI Engineer | Software Developer | CS Graduate</p>
+            <p>
+                Welcome to my digital arcade: a portfolio built for curious teams, practical problem solving,
+                and AI-powered ideas. I design and build software that feels approachable, useful, and a little
+                more alive than the default screen.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="primary-action">View Projects</a>
+                <a href="/about" class="secondary-action">Meet Michelle</a>
+            </div>
+        </main>
+
+        <section class="projects-section" id="projects">
+            <div class="projTitle"><h2>Latest Projects</h2></div>
+            <p>Three builds from my current quest log: practical, AI-friendly, and focused on real user needs.</p>
+            <div class="projects-row">
+
+                <div class="projects-column">
+                    <div class="project-card">
+                        <p class="card-tag">Care Tech</p>
+                        <h2>Pet Care App</h2>
+                        <p>A web app that turns pet needs into weekly care schedules for feeding, training, grooming, and general routines.</p>
+                        <p><a href="https://petcareapp-a070.onrender.com/">Visit Pet Care</a></p>
+                    </div>
+                </div>
+
+                <div class="projects-column">
+                    <div class="project-card">
+                        <p class="card-tag">AI Career Tool</p>
+                        <h2>CareerHelper</h2>
+                        <p>An AI-powered assistant that helps users shape resume content and job-search guidance from their skills, experience, and goals.</p>
+                        <p><a href="https://careerhelper-sooty.vercel.app/">Visit CareerHelper</a></p>
+                    </div>
+                </div>
+
+                <div class="projects-column">
+                    <div class="project-card">
+                        <p class="card-tag">Personalized AI</p>
+                        <h2>MySalon</h2>
+                        <p>An AI hair-care app that creates tailored routines, product suggestions, and maintenance tips from each user's hair goals.</p>
+                        <p><a href="https://github.com/MichelleReyes04/MySalon">Visit MySalon Repo</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="IT-services-container">
+            <div class="IT-services-content">
+                <p class="eyebrow">Built-in feedback loop</p>
+                <h1>IT Service Desk</h1>
+                <h2>Found a bug, broken link, or bright idea?</h2>
+
+                <p>
+                    I built a mini service desk into this portfolio because good engineering includes feedback loops.
+                    If something looks off, loads strangely, or could be improved, send it through the ticket portal.
+                </p>
+
+                <p>
+                    Each submission is stored in a SQLite-backed ticket system so I can track issues, review details,
+                    and keep improving the site like a real product.
+                </p>
+
+                <p>
+                    Recruiters, engineers, friends, and mysterious QA heroes are all welcome here. Detailed reports
+                    earn bonus points.
+                </p>
+
+                <h3>Ticket Categories</h3>
+
+                <ul>
+                    <li>Website Issues</li>
+                    <li>Bug Reports</li>
+                    <li>Performance Problems</li>
+                    <li>Accessibility Concerns</li>
+                    <li>Feature Requests</li>
+                    <li>General Feedback</li>
+                </ul>
+
+                <div class="wrapper">
+                    <a href="/submit-ticket" class="submit-ticket-button">
+                        Submit a Ticket
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function toggleMenu(){
+            const nav = document.getElementById("myNav");
+            const btn = document.getElementById("hamburgerBtn");
+            const isOpen = nav.classList.toggle("open");
+            btn.classList.toggle("active", isOpen);
+            btn.setAttribute("aria-expanded", isOpen);
+        }
+    </script>
+</body>
+</html>

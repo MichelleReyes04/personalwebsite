@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/contact-style.css?v=7">
+</head>
+<body>
+    <div class="body-container">
+        <nav class="navbar">
+            <div class="Title">Michellecodes.dev</div>
+            <div class="nav-wrapper">
+                <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="myNav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="contact-page">
+            <p class="eyebrow">Open channel</p>
+            <h1>Contact</h1>
+
+            <div class="contact-container">
+                <p><span>LinkedIn</span><a href="https://www.linkedin.com/in/michelle-reyes-5a9bb2246">linkedin.com/in/michelle-reyes-5a9bb2246</a></p>
+                <p><span>GitHub</span><a href="https://github.com/MichelleReyes04">github.com/MichelleReyes04</a></p>
+                <p><span>Email</span><a href="mailto:michellereyesss2004@gmail.com">michellereyesss2004@gmail.com</a></p>
+                <p><span>Phone</span><a href="tel:3235408835">323-540-8835</a></p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleMenu(){
+            const nav = document.getElementById("myNav");
+            const btn = document.getElementById("hamburgerBtn");
+            const isOpen = nav.classList.toggle("open");
+            btn.classList.toggle("active", isOpen);
+            btn.setAttribute("aria-expanded", isOpen);
+        }
+    </script>
+</body>
+</html>

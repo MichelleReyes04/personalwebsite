@@ -1,0 +1,249 @@
+@import url("/home-style.css?v=7");
+
+.ticket-page,
+.success-page {
+    width: min(1080px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 56px 0;
+}
+
+.ticket-intro {
+    max-width: 780px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.ticket-intro h1 {
+    width: fit-content;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-right: 3px solid var(--cyan);
+    color: var(--hotpink);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(30px, 5vw, 44px);
+    white-space: nowrap;
+    animation: ticketTyping 1.8s steps(16, end), blinkCursor 0.8s step-end infinite;
+}
+
+.success-card h1 {
+    margin: 0 auto 20px;
+    color: var(--hotpink);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.2;
+}
+
+@keyframes ticketTyping {
+    from {
+        width: 0;
+    }
+}
+
+.ticket-intro p,
+.success-card p {
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.ticket-shell {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.ticket-console,
+.ticket-form,
+.success-card {
+    background:
+        linear-gradient(135deg, rgba(0, 245, 255, 0.1), transparent 34%),
+        var(--panel-bg-2);
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
+}
+
+.ticket-console {
+    display: none;
+}
+
+.ticket-console p {
+    display: grid;
+    gap: 6px;
+    margin: 0 0 16px;
+    padding-bottom: 16px;
+    color: var(--muted);
+    border-bottom: 1px solid rgba(0, 245, 255, 0.14);
+    font-family: monospace;
+}
+
+.ticket-console p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.ticket-console span,
+.field label {
+    color: var(--green);
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.ticket-form {
+    width: min(760px, 100%);
+    padding: 28px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.field {
+    margin-bottom: 22px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.field-help {
+    margin: -2px 0 10px;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 14px;
+    color: var(--white);
+    background-color: rgba(9, 11, 20, 0.72);
+    border: 1px solid rgba(0, 245, 255, 0.24);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background-color: rgba(9, 11, 20, 0.9);
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.12);
+}
+
+select option {
+    color: #090B14;
+}
+
+.ticket-form h2 {
+    margin: 8px 0 20px;
+    color: var(--cyan);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button,
+.primary-action,
+.secondary-action {
+    display: inline-block;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+button {
+    width: 100%;
+    padding: 14px 18px;
+    color: var(--white);
+    background-color: var(--pink);
+    border: none;
+    box-shadow: 0 0 18px rgba(255, 46, 136, 0.3);
+}
+
+button:hover,
+.primary-action:hover,
+.secondary-action:hover {
+    transform: translateY(-2px);
+}
+
+.success-page {
+    display: grid;
+    min-height: calc(100vh - 82px);
+    place-items: center;
+}
+
+.success-card {
+    position: relative;
+    width: min(720px, 100%);
+    padding: 38px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.success-card::before {
+    content: "OK";
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    color: rgba(57, 255, 20, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 74px;
+    font-weight: bold;
+}
+
+.success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+@media screen and (max-width: 760px) {
+    .ticket-shell,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ticket-console {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ticket-page,
+    .success-page {
+        width: calc(100% - 24px);
+        padding: 36px 0;
+    }
+
+    .ticket-form,
+    .ticket-console,
+    .success-card {
+        padding: 20px;
+    }
+
+    .ticket-intro h1,
+    .success-card h1 {
+        max-width: 100%;
+        font-size: 28px;
+    }
+}

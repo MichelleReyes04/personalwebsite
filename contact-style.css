@@ -1,0 +1,77 @@
+@import url("/home-style.css?v=7");
+
+.contact-page {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 56px 0;
+}
+
+.contact-page > .eyebrow {
+    text-align: center;
+}
+
+.contact-page h1 {
+    width: 7ch;
+    margin: 0 auto 34px;
+    overflow: hidden;
+    border-right: 3px solid var(--cyan);
+    color: var(--hotpink);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(32px, 5vw, 44px);
+    white-space: nowrap;
+    animation: contactTyping 1.2s steps(7, end), blinkCursor 0.8s step-end infinite;
+}
+
+@keyframes contactTyping {
+    from {
+        width: 0;
+    }
+}
+
+.contact-container {
+    display: grid;
+    gap: 14px;
+    padding: 28px;
+    background:
+        linear-gradient(135deg, rgba(157, 78, 221, 0.18), transparent 38%),
+        var(--panel-bg-2);
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
+}
+
+.contact-container p {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    margin: 0;
+    padding: 14px;
+    background-color: rgba(9, 11, 20, 0.42);
+    border: 1px solid rgba(0, 245, 255, 0.14);
+    border-radius: 4px;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.contact-container span {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.contact-container a {
+    color: var(--cyan);
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+.contact-container a:hover {
+    color: var(--pink);
+}
+
+@media screen and (max-width: 600px) {
+    .contact-container p {
+        grid-template-columns: 1fr;
+    }
+}

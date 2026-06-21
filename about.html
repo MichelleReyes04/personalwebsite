@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/about-style.css?v=7">
+</head>
+<body>
+    <div class="body-container">
+        <nav class="navbar">
+            <div class="Title">Michellecodes.dev</div>
+            <div class="nav-wrapper">
+                <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="myNav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="about-page">
+            <p class="eyebrow">Character profile</p>
+            <h1>About</h1>
+
+            <div class="about-container">
+                <div class="about-copy">
+                    <h2>Character: Michelle Reyes</h2>
+                    <p>
+                        Hi, I am Michelle Reyes, a Computer Science graduate who enjoys building AI and software
+                        projects that turn messy real-world needs into clean digital experiences.
+                    </p>
+                    <p>
+                        My background includes IT experience as a Student Professional Worker at LADWP, where I
+                        strengthened my troubleshooting, support, and systems mindset. Next, I am continuing the
+                        journey as an AI Engineer Intern with Avanade.
+                    </p>
+                    <p>
+                        I like projects that feel practical and human: tools that help people make decisions, get
+                        organized, and move through technology with less friction.
+                    </p>
+                </div>
+                <img src="/Michelle_personalphoto.png" alt="Michelle Reyes" width="300" height="300">
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleMenu(){
+            const nav = document.getElementById("myNav");
+            const btn = document.getElementById("hamburgerBtn");
+            const isOpen = nav.classList.toggle("open");
+            btn.classList.toggle("active", isOpen);
+            btn.setAttribute("aria-expanded", isOpen);
+        }
+    </script>
+</body>
+</html>
